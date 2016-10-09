@@ -1,0 +1,18 @@
+{
+  "name": "react-boilerplate-rr",
+  "version": "1.0.0",
+  "description": "React boilerplate with React and Redux",
+  "scripts": {
+    "test": "test"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+ssh://git@gitlab.com/shimarulin/react-boilerplate-rr.git"
+  },
+  "author": "Vyacheslav Shimarulin",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://gitlab.com/shimarulin/react-boilerplate-rr/issues"
+  },
+  "homepage": "https://gitlab.com/shimarulin/react-boilerplate-rr#README"
+}
