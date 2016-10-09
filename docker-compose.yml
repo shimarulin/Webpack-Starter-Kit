@@ -1,0 +1,56 @@
+version: '2'
+services:
+
+  node:
+    image: local/node:6
+    build:
+      context: ./docker/node
+    volumes:
+      - .:/app
+      - node:/usr/lib/node_modules
+
+  runtime:
+    image: local/node-6-runtime/webpack:latest
+    build:
+      context: ./docker/runtime
+    volumes:
+      - .:/app
+      - node:/usr/lib/node_modules
+
+  npm:
+    extends:
+      service: runtime
+    command:
+      - '-'
+    entrypoint:
+      - npm
+
+  webpack:
+    extends:
+      service: runtime
+    environment:
+      - NODE_ENV=development
+    command:
+      - '-'
+    entrypoint:
+      - webpack
+
+  wds:
+    extends:
+      service: runtime
+    environment:
+      - NODE_ENV=development
+      - PUBLIC_PATH=/dist/
+    entrypoint:
+      - 'webpack-dev-server'
+      - '--hot'
+      - '--inline'
+      - '--content-base'
+      - './public'
+      - '--host'
+      - '0.0.0.0'
+      - '--progress'
+      - '--colors'
+
+volumes:
+  node:
