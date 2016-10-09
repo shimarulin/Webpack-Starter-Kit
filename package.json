@@ -14,5 +14,9 @@
   "bugs": {
     "url": "https://gitlab.com/shimarulin/react-boilerplate-rr/issues"
   },
-  "homepage": "https://gitlab.com/shimarulin/react-boilerplate-rr#README"
+  "homepage": "https://gitlab.com/shimarulin/react-boilerplate-rr#README",
+  "devDependencies": {
+    "webpack": "1.13.2",
+    "webpack-dev-server": "1.16.2"
+  }
 }

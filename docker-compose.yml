@@ -10,7 +10,7 @@ services:
       - node:/usr/lib/node_modules
 
   runtime:
-    image: local/node-6-runtime/webpack:latest
+    image: local/node-6-runtime/webpack:1.13.2
     build:
       context: ./docker/runtime
     volumes:
