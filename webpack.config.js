@@ -24,7 +24,8 @@
 let
   path = require('path'),
   webpack = require('webpack'),
-  ExtractTextPlugin = require('extract-text-webpack-plugin');
+  ExtractTextPlugin = require('extract-text-webpack-plugin'),
+  HtmlWebpackPlugin = require('html-webpack-plugin');
 
 const
   NODE_ENV = process.env.NODE_ENV,
@@ -47,7 +48,8 @@ module.exports = {
 
   /** Delay the rebuilt after the first change. Value is a time in ms */
   watchOptions: {
-    aggregateTimeout: 100
+    aggregateTimeout: 100,
+    poll: 1000
   },
 
   devtool: NODE_ENV == 'development' ? 'inline-source-map' : null, // inline-source-map|eval
@@ -62,6 +64,10 @@ module.exports = {
       {
         test: /\.(css)$/,
         loader: ExtractTextPlugin.extract('style', 'css?sourceMap')
+      },
+      {
+        test: /\.html$/,
+        loader: 'html'
       }
     ]
   },
@@ -71,6 +77,12 @@ module.exports = {
       compress: { warnings: false }
     }),
     new webpack.NoErrorsPlugin(),
-    new ExtractTextPlugin('[name].bundle.css')
+    new ExtractTextPlugin('[name].bundle.css'),
+    new HtmlWebpackPlugin({
+      template: 'index.html',
+      filename: '../index.html',
+      minify: false,
+      cache: false
+    })
   ]
 };
