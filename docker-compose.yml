@@ -38,8 +38,6 @@ services:
       service: runtime
     environment:
       - NODE_ENV=development
-    command:
-      - '-'
     entrypoint:
       - webpack
 
