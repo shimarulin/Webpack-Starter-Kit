@@ -10,6 +10,7 @@ html {
 }
 body {
   position: absolute;
+  /* background source https://github.com/Apricity-OS/apricity-wallpapers/blob/master/backgrounds/apricity/default.jpg */
   background: url("./default.jpg");
   font-family: "Liberation Sans Narrow", sans-serif;
 }
