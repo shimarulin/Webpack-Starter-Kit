@@ -63,11 +63,15 @@ module.exports = {
       },
       {
         test: /\.(css)$/,
-        loader: ExtractTextPlugin.extract('style', 'css?sourceMap')
+        loader: ExtractTextPlugin.extract('style', 'css?sourceMap', {publicPath: ''})
       },
       {
         test: /\.html$/,
         loader: 'html'
+      },
+      {
+        test: /\.(png|jpg|svg)$/,
+        loader: 'url?limit=10000&name=images/[name].[ext]'
       }
     ]
   },
