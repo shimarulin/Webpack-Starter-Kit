@@ -48,7 +48,7 @@ services:
       - NODE_ENV=development
       - PUBLIC_PATH=/dist/
       - VIRTUAL_HOST=application.dev
-      - VIRTUAL_PORT=8080
+      - VIRTUAL_PORT=8000
     entrypoint:
       - 'webpack-dev-server'
       - '--hot'
