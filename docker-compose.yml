@@ -5,7 +5,7 @@ services:
       image: jwilder/nginx-proxy
       ports:
         - 80:80
-        - 8000:80
+        - ${VIRTUAL_PORT}:80
       volumes:
         - /var/run/docker.sock:/tmp/docker.sock:ro
 
@@ -47,8 +47,8 @@ services:
     environment:
       - NODE_ENV=development
       - PUBLIC_PATH=/dist/
-      - VIRTUAL_HOST=application.dev
-      - VIRTUAL_PORT=8000
+      - VIRTUAL_HOST
+      - VIRTUAL_PORT
     entrypoint:
       - 'webpack-dev-server'
       - '--hot'
@@ -58,11 +58,11 @@ services:
       - '--host'
       - '0.0.0.0'
       - '--port'
-      - '8000'
+      - '${VIRTUAL_PORT}'
       - '--progress'
       - '--colors'
     expose:
-      - 8000
+      - ${VIRTUAL_PORT}
     links:
       - nginx-proxy
 
