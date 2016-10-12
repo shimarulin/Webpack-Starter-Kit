@@ -1,20 +1,20 @@
 {
-  "name": "react-boilerplate-rr",
+  "name": "webpack-starter-kit",
   "version": "1.0.0",
-  "description": "React boilerplate with React and Redux",
+  "description": "Webpack boilerplate",
   "scripts": {
     "test": "test"
   },
   "repository": {
     "type": "git",
-    "url": "git+ssh://git@gitlab.com/shimarulin/react-boilerplate-rr.git"
+    "url": "git+ssh://git@github.com:shimarulin/webpack-starter-kit.git"
   },
   "author": "Vyacheslav Shimarulin",
   "license": "MIT",
   "bugs": {
-    "url": "https://gitlab.com/shimarulin/react-boilerplate-rr/issues"
+    "url": "https://github.com/shimarulin/webpack-starter-kit/issues"
   },
-  "homepage": "https://gitlab.com/shimarulin/react-boilerplate-rr#README",
+  "homepage": "https://github.com/shimarulin/webpack-starter-kit",
   "devDependencies": {
     "babel-core": "^6.17.0",
     "babel-loader": "^6.2.5",
