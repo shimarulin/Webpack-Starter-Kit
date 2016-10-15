@@ -85,7 +85,12 @@ module.exports = {
     new HtmlWebpackPlugin({
       template: 'index.html',
       filename: '../index.html',
-      minify: NODE_ENV == 'production',
+      minify: NODE_ENV == 'production' ?
+      {
+        removeAttributeQuotes: true,
+        caseSensitive: true,
+        collapseWhitespace: true
+      } : false,
       cache: false
     })
   ]
